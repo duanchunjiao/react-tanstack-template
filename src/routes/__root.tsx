@@ -8,7 +8,7 @@ function RootComponent() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 p-4 ">
       {/* 响应式容器：移动端宽度自适应，PC端限制最大宽度 */}
-      <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl w-full px-6 py-6 flex flex-col items-center">
+      <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl w-full px-6 py-6 flex flex-col items-center lg:max-w-[50%]">
         {/* 主标题 - 响应式字体大小 */}
         <div className="text-center mb-4">
           <h1 className="font-extrabold text-base text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 mb-1 drop-shadow-lg">

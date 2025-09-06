@@ -1,21 +1,23 @@
-import tailwindcss from '@tailwindcss/postcss'
 import cssMergeLonghand from 'postcss-merge-longhand'
-import pxToviewport from 'postcss-px-to-viewport-8-plugin'
+import pxToRem from 'postcss-pxtorem'
+import tailwindcss from 'tailwindcss'
 
 export default {
   plugins: [
     tailwindcss,
     cssMergeLonghand,
-    pxToviewport({
-      propList: ['*'],
-      viewportWidth: 375, // 视窗宽度，对应设计稿宽度
-      unitPrecision: 5, // 指定`px`转换为视窗单位值的小数位数（很多时候无法整除）
-      viewportUnit: 'vw', // 指定需要转换成的视窗单位，建议使用vw
-      minPixelValue: 1, // 小于或等于`1px`不转换为视窗单位，你也可以设置为你想要的值
-      mediaQuery: false, // 允许在媒体查询中转换`px`
-      replace: true, // 是否直接更换属性值，而不添加备用属性
-      exclude: [/node_modules\/antd-mobile/],
+    pxToRem({
+      rootValue: 16, // 根元素字体大小，（tainwindcsss就是基于16来做的转换 需要跟它适配）
+      unitPrecision: 5, // rem 单位的小数位数
+      propList: ['*'], // 需要转换的属性，* 表示所有属性
+      selectorBlackList: [], // 不进行转换的选择器黑名单
+      replace: true, // 是否替换原有的 px 单位
+      mediaQuery: false, // 是否转换媒体查询中的 px
+      minPixelValue: 2, // 小于该值的 px 不会被转换
+      exclude(file) { // 使用新配置的精确排除规则
+        return file.includes('node_modules/antd-mobile')
+      },
+      unitToConvert: 'px',
     }),
-
   ],
 }
