@@ -1,0 +1,45 @@
+{
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "people": [
+    {
+      "id": 1,
+      "name": "Nero Tate",
+      "phone": "1-266-218-5433",
+      "email": "ipsum.primis@aol.edu"
+    },
+    {
+      "id": 2,
+      "name": "Cedric Swanson",
+      "phone": "(253) 318-7118",
+      "email": "fringilla@outlook.org"
+    },
+    {
+      "id": 3,
+      "name": "Colorado Hatfield",
+      "phone": "(753) 685-1206",
+      "email": "a.aliquet@protonmail.org"
+    },
+    {
+      "id": 4,
+      "name": "Kibo Christensen",
+      "phone": "1-145-731-4727",
+      "email": "ante.ipsum@hotmail.ca"
+    },
+    {
+      "id": 5,
+      "name": "Tatum Hendricks",
+      "phone": "(262) 673-2575",
+      "email": "lacus@aol.net"
+    }
+  ]
+}
