@@ -9,6 +9,13 @@ export const Route = createFileRoute('/query-list/')({
 
 function RouteComponent() {
   // const navigate = useNavigate()
+  //  1、支持预加载
+  //  2、支持缓存
+  //  3、支持过期自动释放内存
+  //  4、支持失败重试
+  //  5、支持切换窗口时不重新获取数据
+  //  6、支持手动刷新、分页
+
   const { data, refetch, isLoading, isFetching, isRefetching } = useQuery({
     queryKey: ['query-list'],
     queryFn: async () => fetchData('people'),
@@ -39,35 +46,34 @@ function RouteComponent() {
       <h1 className="title">哈哈哈哈</h1>
       <h1 className="text-[30px]">hi</h1>
       <h2
-        className="text-base font-bold mb-4 text-center text-blue-700"
+        className="mb-4 text-center text-base font-bold text-blue-700"
         onClick={() => {
           refetch()
         }}
       >
         人员列表
       </h2>
-      <div>
-      </div>
-      <div className="space-x-2 gap-3 flex flex-wrap justify-center">
+      <div></div>
+      <div className="flex flex-wrap justify-center gap-3 space-x-2">
         {data?.map((item: any) => (
           <div
             key={item.id}
-            className="rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-200 p-4 flex flex-col gap-1.5 border border-gray-100 hover:border-blue-300 cursor-pointer group"
+            className="group flex cursor-pointer flex-col gap-1.5 rounded-lg border border-gray-100 bg-white p-4 shadow-md transition-shadow duration-200 hover:border-blue-300 hover:shadow-lg"
             onClick={() => {
               // navigate(`/query-list/details/${item.id}`)
             }}
           >
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-200 to-purple-200 flex items-center justify-center text-[10px] font-bold text-blue-700 group-hover:scale-110 transition-transform duration-200">
+              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-blue-200 to-purple-200 text-[10px] font-bold text-blue-700 transition-transform duration-200 group-hover:scale-110">
                 {item.name?.[0] || '?'}
               </div>
               <div className="text-sm font-semibold text-gray-800">{item.name}</div>
             </div>
-            <div className="text-gray-500 text-[10px] pl-8">
+            <div className="pl-8 text-[10px] text-gray-500">
               📞
               {item.phone}
             </div>
-            <div className="text-gray-500 text-[10px] pl-8">
+            <div className="pl-8 text-[10px] text-gray-500">
               ✉️
               {item.email}
             </div>

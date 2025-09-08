@@ -10,5 +10,6 @@ export default antfu({
     // 强制启用 Hooks 核心规则
     'react-hooks/rules-of-hooks': 'error', // 检查 Hooks 调用位置
     'react-hooks/exhaustive-deps': 'error', // 检查依赖项完整性
+    'no-console': 'warn',
   },
 })

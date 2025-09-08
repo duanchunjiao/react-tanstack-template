@@ -25,12 +25,7 @@ interface FlexibleInstance {
  * @returns
  */
 function createFlexible(options: FlexibleOptions = {}): FlexibleInstance {
-  const {
-    UIWidth = 375,
-    baseSize = 16,
-    minSize = 12,
-    maxSize = 32,
-  } = options
+  const { UIWidth = 375, baseSize = 16, minSize = 12, maxSize = 32 } = options
 
   let isInitialized = false
 
@@ -71,8 +66,8 @@ function createFlexible(options: FlexibleOptions = {}): FlexibleInstance {
 }
 
 const flexible = createFlexible({
-  UIWidth: 375,
-  baseSize: 16,
+  UIWidth: 375, // UI尺寸
+  baseSize: 16, // 适配taiwindcss比例
   minSize: 12,
   maxSize: 32,
 })

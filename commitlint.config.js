@@ -1,7 +1,6 @@
 export default {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    // type 类型定义
     'type-enum': [
       2,
       'always',
@@ -22,7 +21,6 @@ export default {
       ],
     ],
     // subject 大小写不做校验
-    // 自动部署的BUILD ROBOT的commit信息大写，以作区别
     'subject-case': [0],
   },
 }
