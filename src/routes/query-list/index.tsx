@@ -43,8 +43,6 @@ function RouteComponent() {
   // }
   return (
     <div className="">
-      <h1 className="title">哈哈哈哈</h1>
-      <h1 className="text-[30px]">hi</h1>
       <h2
         className="mb-4 text-center text-base font-bold text-blue-700"
         onClick={() => {

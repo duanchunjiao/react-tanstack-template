@@ -1,7 +1,0 @@
-.title {
-  color: red;
-  @apply font-bold;
-  .a {
-    color: blue;
-  }
-}
